@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "100544925216",
+    "project_id": "kodluyoruzproje-31061",
+    "storage_bucket": "kodluyoruzproje-31061.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100544925216:android:7b1667d7b37949dd9af645",
+        "android_client_info": {
+          "package_name": "com.example.projegrup7"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp7wXE-Ee9cKCNaVeSF1oB7csx9RChA7E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
