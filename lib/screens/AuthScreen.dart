@@ -1,9 +1,10 @@
-import 'package:dentzay/auth/auth_block.dart';
-import 'package:dentzay/auth/auth_event.dart';
-import 'package:dentzay/auth/auth_state.dart';
-import 'package:dentzay/screens/MenuScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../auth/auth_block.dart';
+import '../auth/auth_event.dart';
+import '../auth/auth_state.dart';
+import 'MenuScreen.dart';
 
 
 class AuthScreen extends StatefulWidget {

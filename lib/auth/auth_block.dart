@@ -1,9 +1,9 @@
 
-import 'package:dentzay/auth/auth_event.dart';
-import 'package:dentzay/auth/auth_state.dart';
-import 'package:dentzay/repositories/auth_repositories.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../repositories/auth_repositories.dart';
+import 'auth_event.dart';
+import 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent,AuthState>{
   final AuthRepository authRepository;
