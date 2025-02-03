@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -5,7 +6,6 @@ import '../auth/auth_block.dart';
 import '../auth/auth_event.dart';
 import '../auth/auth_state.dart';
 import 'MenuScreen.dart';
-
 
 class AuthScreen extends StatefulWidget {
   @override
@@ -44,13 +44,14 @@ class _AuthScreenState extends State<AuthScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       resizeToAvoidBottomInset: true,
       backgroundColor: Colors.white,
       appBar:PreferredSize(
-        preferredSize: Size.fromHeight(200),
+        preferredSize: Size.fromHeight(130),
         child: ClipRRect(
            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(50), // Sol alt köşe oval
-              bottomRight: Radius.circular(50), // Sağ alt köşe oval
+              bottomLeft: Radius.circular(45), // Sol alt köşe oval
+              bottomRight: Radius.circular(45), // Sağ alt köşe oval
             ),
           child: AppBar(
             backgroundColor: Color(0xff61BE7B),
@@ -72,6 +73,7 @@ class _AuthScreenState extends State<AuthScreen>
                 context,
                 MaterialPageRoute(builder: (context) => MenuScreen()),
               );
+    
             } else if (state is AuthError) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text(state.message)),
@@ -213,27 +215,6 @@ class SignUpTab extends StatelessWidget {
               'Kayıt Ol',
               style: TextStyle(fontSize: 16, color: Color(0xff61BE7B)),
             ),
-          ),
-          SizedBox(height: 15),
-          Text('Veya bu şekilde kayıt yapınız!',
-              style: TextStyle(fontSize: 14)),
-          SizedBox(height: 15),
-          ElevatedButton(
-            onPressed: () {
-              context.read<AuthBloc>().add(GoogleSignInRequested());
-            },
-            style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                  side: BorderSide(
-                      color: const Color(0xff61BE7B), width: 2)),
-              backgroundColor: Colors.white,
-            ),
-            child: Text('Continue with Google',
-                style: TextStyle(
-                    color: const Color(0xff61BE7B),
-                    fontSize: 16)),
           ),
         ],
       ),
@@ -386,29 +367,7 @@ class SignInTab extends StatelessWidget {
               style: TextStyle(fontSize: 16, color:  Color(0xff61BE7B)),
             ),
           ),
-          SizedBox(height: 15),
-          Text('Veya bu şekilde giriş yapınız!',
-              style: TextStyle(fontSize: 14)),
-          SizedBox(height: 15),
-          ElevatedButton(
-            onPressed: () {
-              context.read<AuthBloc>().add(GoogleSignInRequested());
-            },
-            style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                  side: BorderSide(
-                      color: const  Color(0xff61BE7B), width: 2)),
-              backgroundColor: Colors.white,
-            ),
-            child: Text(
-              'Continue with Google',
-              style: TextStyle(
-                  fontSize: 16, color:  Color(0xff61BE7B)),
-            ),
-          ),
-        ],
+        ]
       ),
     ));
   }

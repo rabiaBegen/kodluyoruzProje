@@ -1,12 +1,13 @@
 // lib/main.dart
 
-import 'package:dentzay/auth/auth_block.dart';
-import 'package:dentzay/repositories/auth_repositories.dart';
-import 'package:dentzay/screens/AuthScreen.dart';
-import 'package:dentzay/screens/MenuScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'auth/auth_block.dart';
+import 'repositories/auth_repositories.dart';
+import 'screens/AuthScreen.dart';
+import 'screens/MenuScreen.dart';
 
 
 void main() async {
@@ -20,6 +21,8 @@ void main() async {
 class MyApp extends StatelessWidget {
   final AuthRepository authRepository;
   MyApp({required this.authRepository});
+  
+  get campaignId => null;
 
   @override
   Widget build(BuildContext context) {
